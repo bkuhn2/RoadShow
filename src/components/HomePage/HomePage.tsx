@@ -17,6 +17,18 @@ const HomePage = () => {
     setStartDate(event.target.value)
   }
 
+  const setMinimumDate = () => {
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = String(today.getMonth()).length === 1 ? `0${today.getMonth()}` : today.getMonth();
+    const day = String(today.getDate()).length === 1 ? `0${today.getDate()}` : today.getDate();
+
+    return `${year}-${month}-${day}`
+  }
+
+  console.log(setMinimumDate())
+  
+
   return (
     <main className='home-page'>
       <form className='home-form'>
@@ -30,6 +42,8 @@ const HomePage = () => {
           />
           <input
             type='date'
+            min={setMinimumDate()}
+            max='2030-01-01'
             name='trip start date'
             value={startDate}
             onChange={event => handleDateInput(event)}
