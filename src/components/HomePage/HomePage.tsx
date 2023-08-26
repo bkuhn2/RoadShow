@@ -3,8 +3,11 @@ import './HomePage.css'
 
 const HomePage = () => {
   return (
-    <main>
-      
+    <main className='home-page'>
+      <form className='home-form'>
+        <input />
+        <input />
+      </form>
     </main>
   )
 }
